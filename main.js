@@ -2,7 +2,7 @@
 
 let pass = 4567;
 
-let dato = parseInt(prompt("Por favor ingrese correctamente los digitos de su clave."));
+let dato = parseInt(prompt("Bienvenido/a. Por favor ingrese los digitos de su clave."));
 
 let intentos = 3
 
@@ -14,3 +14,4 @@ while((dato != pass) && (intentos > 0)) {
   }
   dato = parseInt(prompt("Por favor ingrese correctamente los digitos de su clave"))
 }
+
