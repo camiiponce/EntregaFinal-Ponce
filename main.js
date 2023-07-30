@@ -1,4 +1,4 @@
-/*class Producto{
+class Producto{
     constructor(codigo, nombre, precio){
         this.codigo = codigo
         this.nombre = nombre
@@ -60,4 +60,4 @@ do{
             break;
     }
 } while(opcion !== 4)
-*/
+
