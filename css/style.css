@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -9,34 +9,62 @@ body{
     background-color: #f9d9c7;
 }
 
-header{
+.header{
     background-color: #eab08f;
-    font-family: 'Dancing Script', cursive;
-    font-size: 25px;
-    padding: 20px;
-    text-align: center;
+    font-family: 'Josefin Sans';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 0px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
-nav{
-    background-color: #fff;
-    padding: 10px;
+.logo{
+    width: 140px;
+    height: 90px;
 }
-nav ul{
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .navbar li{
     list-style: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-nav ul li{
-    display: inline;
-    margin-right: 10px;
-}
-nav ul li a{
-    color: #000;
-    font-size: 20px;
-    padding: 80px;
+    padding: 0 20px;
+    position: relative;
+ }
+
+ .navbar li a{
     text-decoration: none;
-}
+    font-size: 20px;
+    color: #000;
+    transition: 0.3s ease;
+ }
+
+ .navbar li a:hover,
+ .navbar li a.active{
+    color: azure;
+ }
+
+ .navbar li a.active::after,
+ .navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: azure;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+ }
+
+
+
+
+
+
+
 
 /*FOOTER*/
 
@@ -46,4 +74,16 @@ footer{
     font-size: 18px;
     padding: 10px;
     text-align: center;
+}
+
+
+/*mapa*/
+
+.mapa {
+    margin: 25px 25px;
+}
+  
+.mapa iframe {
+    width: 800px;
+    height: 450px;
 }
