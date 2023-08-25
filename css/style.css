@@ -6,23 +6,23 @@
 }
 
 body{
-    background-color: #f9d9c7;
+    background-color: #f1e4dc;
 }
 
 .header{
-    background-color: #eab08f;
+    background-color: #f1ded3;
     font-family: 'Josefin Sans';
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 20px;
-    padding: 0px 10px;
+    padding: 0px 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
 .logo{
     width: 140px;
-    height: 90px;
+    height: 70px;
 }
 
 .navbar{
@@ -59,10 +59,104 @@ body{
     left: 20px;
  }
 
+/*Categoria*/
 
 
 
 
+/*Productos destacados*/
+
+.card {
+    border: none;
+    border-radius: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*Productos*/
+
+.container {
+    padding-bottom: 40px;
+    padding-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .products {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .products .product {
+    position: relative;
+    background-color: #ffffff5c;
+    width: 300px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px 40px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .products .product .inner {
+    width: 100%;
+    height: 60%;
+    display: grid;
+    place-items: center;
+  }
+  .products .product .inner img {
+    width: 240px;
+  }
+
+  .inner{
+    overflow: hidden;
+  }
+
+  .inner img{
+    transition: all 1.5s ease;
+  }
+
+  .inner:hover img{
+    transform: scale(1.2);
+  }
+
+  .products .product p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .products .product .compra {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  .products .product .compra .button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: none;
+    background-color: rgba(29, 29, 29, 0.8549019608);
+    color: #fff;
+    font-size: 18px;
+  }
+ 
+  .products .name h3 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: #000;
+  }
+
+  .products .compra span {
+    font-size: 1.5rem;
+    color: #d7939e;
+    padding-right: 50px;
+  }
+  
 
 
 
