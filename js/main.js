@@ -22,13 +22,57 @@ const productos = [producto1, producto2, producto3, producto4, producto5, produc
 for(let i=0; i<productos.length; i++){
     
     let card = document.getElementById('card' + i)
-    card.querySelector('.card-img-top').src = productos[i].imagen;  
-    card.querySelector('.card-title').textContent = productos[i].nombre;
-    card.querySelector('.card-text').textContent = '$' + productos[i].precio;
+    card.querySelector('.card-img-top').src = productos[i].imagen 
+    card.querySelector('.card-title').textContent = productos[i].nombre
+    card.querySelector('.card-text').textContent = '$' + productos[i].precio
+    const botonAgregarCarrito = card.querySelector('.btn-agregar-carrito')
+    botonAgregarCarrito.addEventListener('click', function() {
+        agregarAlCarrito(productos[i]);
+    })
 }
 
-let total = 0;
-let opcion = 0;
+let total = 0
+
+function agregarAlCarrito(producto) {
+    let carrito = JSON.parse(sessionStorage.getItem('carrito')) || []
+
+    //Ver si ya está en el carrito
+    const productoEnCarrito = carrito.find(item => item.codigo === producto.codigo);
+
+    if (!productoEnCarrito) {
+        // Si no está, lo agrego
+        carrito.push(producto)
+        sessionStorage.setItem('carrito', JSON.stringify(carrito));
+        alert('Se agregó ' + producto.nombre + ' al carrito');
+        total = sumarAlTotal(total, producto.precio)
+    } else {
+        //Si ya está, se da aviso y no agrego
+        alert('El producto ya está en el carrito');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const botonVerCarrito = document.getElementById('botonComprar')
+
+    botonVerCarrito.addEventListener('click', function () {
+        //Obtengo lo que esta en el session
+        const carrito = JSON.parse(sessionStorage.getItem('carrito')) || []
+
+        if (carrito.length === 0) {
+            alert('No hay nada en el carrito');
+        } else {
+            //Muestreo de lo que hay en el carrito
+            let mensaje = 'Productos en el carrito:\n'
+            for (const producto of carrito) {
+                mensaje += '- ' + producto.nombre + '\n'
+            }
+            mensaje += '\n'
+            mensaje += 'Total: ' + total + '\n'
+            mensaje += 'Total IVA incluido: ' + sumarIva(total) + '\n'
+            alert(mensaje)
+        }
+    });
+});
 
 //Funciones
 
@@ -42,7 +86,7 @@ function sumarIva(saldo){
 
 //Menú
 
-const boton = document.getElementById('botonComprar')
+/*const boton = document.getElementById('botonComprar')
 boton.addEventListener('click', funcionComprar)
 
 function funcionComprar(){
@@ -99,3 +143,46 @@ function funcionComprar(){
     } while(opcion !== 7)
 
 }
+*/
+
+//Login//
+
+const inputs = document.querySelectorAll(".input-field");
+const toggle_btn = document.querySelectorAll(".toggle");
+const main = document.querySelector("main");
+const bullets = document.querySelectorAll(".bullets span");
+const images = document.querySelectorAll(".image");
+
+inputs.forEach((inp) => {
+  inp.addEventListener("focus", () => {
+    inp.classList.add("active");
+  });
+  inp.addEventListener("blur", () => {
+    if (inp.value != "") return;
+    inp.classList.remove("active");
+  });
+});
+
+toggle_btn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    main.classList.toggle("sign-up-mode");
+  });
+});
+
+function moveSlider() {
+  let index = this.dataset.value;
+
+  let currentImage = document.querySelector(`.img-${index}`);
+  images.forEach((img) => img.classList.remove("show"));
+  currentImage.classList.add("show");
+
+  const textSlider = document.querySelector(".text-group");
+  textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
+
+  bullets.forEach((bull) => bull.classList.remove("active"));
+  this.classList.add("active");
+}
+
+bullets.forEach((bullet) => {
+  bullet.addEventListener("click", moveSlider);
+});
