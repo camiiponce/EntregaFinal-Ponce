@@ -1,0 +1,39 @@
+[
+    {
+        "codigo": 1,
+        "nombre": "Mono rosa",
+        "precio": 100,
+        "imagen": "/multimedia/img/mono2.png"
+    },
+    {
+        "codigo": 2,
+        "nombre": "Mono azul",
+        "precio": 200,
+        "imagen": "./multimedia/img/mono1.png"
+    },
+    {
+        "codigo": 3,
+        "nombre": "Tapado bicolor",
+        "precio": 400,
+        "imagen": "./multimedia/img/tapado2.png"
+    },
+    {
+        "codigo": 4,
+        "nombre": "Remera bicolor",
+        "precio": 200,
+        "imagen": "./multimedia/img/remera3.png"
+    },
+    {
+        "codigo": 5,
+        "nombre": "Saco gris",
+        "precio": 400,
+        "imagen": "./multimedia/img/traje3.png"
+    },
+    {
+        "codigo": 6,
+        "nombre": "Saco bicolor",
+        "precio": 400,
+        "imagen": "./multimedia/img/traje4.png"
+    }
+
+]

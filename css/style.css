@@ -59,11 +59,6 @@ body{
     left: 20px;
  }
 
-/*Categoria*/
-
-
-
-
 /*Productos destacados*/
 
 .card {
@@ -216,16 +211,16 @@ footer{
     text-align: center;
 }
 
+/*Nosotros*/
 
-/*mapa*/
-
-.mapa {
-    margin: 25px 25px;
+.titulo-nosotros{
+  text-align: center;
 }
-  
-.mapa iframe {
-    width: 800px;
-    height: 450px;
+
+.p-nosotros{
+  font-size: 20px;
+  margin: 10px 80px;
+  text-align: justify;
 }
 
 
